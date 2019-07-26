@@ -1,6 +1,6 @@
-      body {
-        background-image: linear-gradient(red, yellow, blue);
-        text-align: cetner;
+      html,body {
+        text-align: center;
+        background-image: linear-gradient(#85BB4C, #EBF2EA);;
       }
       
       .bank {
@@ -25,24 +25,6 @@
         padding-bottom: 20px;
         padding-left:20px;
         font-family: "Roboto";
-      }
-      
-      #submit {
-        font-size:50px;
-        font-family: "Montserrat";
-        width: 250px;
-        background-color: lightgray;
-        height: 80px;
-        text-align: center;
-      }
-            
-      .flex-container{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 60vh;
-        justify-content: flex-start;
-        align-items: center;
       }
       
       .box {
@@ -118,4 +100,26 @@
         text-align: center;
         margin-top: 90px;
       }
+
+      .container-fluid {
+       background-color: #F8F8F8; 
+      margin-bottom:10px;
+      font-color: #85BB4C; 
+      padding-top:10px; 
+      padding-right:40px;
+      margin-top:15px;
+      padding-bottom:2px;
+      border-top:2px solid black;
+      border-bottom:2px solid black;
+      }
+
+     #submit {
+        font-size:50px;
+        font-family: "Montserrat";
+        width: 250px;
+        background-color: lightgray;
+        height: 80px;
+        text-align: center;
+      }
+
       

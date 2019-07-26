@@ -25,7 +25,7 @@ SECRET_KEY = '*6t50m_p^gif@4sz!590)u_!#9c-u8l9+7-v+*_op=v^#7wkv9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sharedFinances-juliannawhite13758275.codeanyapp.com']
+ALLOWED_HOSTS = ['sharedFinances-variant-hchotwani921366.codeanyapp.com']
 
 
 # Application definition

@@ -7,9 +7,8 @@
      // creates a  random user 
      var users = ["Alice","Bob", "Eve", "Jack", "Jill", "Carl", "Josh"];
      var user = users[Math.trunc(Math.random()*users.length)];
-                                 
-     var url_large = "http://sharedFinances-juliannawhite13758275.codeanyapp.com/draw/?size=large";
-     var socket = new WebSocket('wss://sharedFinances-juliannawhite13758275.codeanyapp.com/ws/draw');
+                                
+     var socket = new WebSocket('wss://sharedFinances-variant-hchotwani921366.codeanyapp.com/ws/draw');
      var total_budget, food_amt, act_amt, tra_amt, misc_amt;
      
      // adding ability to get username
@@ -93,6 +92,7 @@
        }  
     }
      
+     var categoryName, categoryValue;
      // code for large screen
      if (url.indexOf('?size=large') > -1) {
          $("#submitForm").hide(1);
@@ -101,9 +101,27 @@
          $('.screen').hide(1); 
          $('.hello').hide(1);
          $('.hello1').hide(1);
+         $('.add-cat').hide(1);
        
-         var info;
+         //add category 
+         $(".add-category").on('click', () => {
+           $('.add-cat').toggle();
+           $('#cat-name-by-user').val('');
+           $('#cat-value-by-user').val('');
+         });
+         
+         
+         
+         $(".add-cat-btn").on('click', () => {
+         categoryName = $('#cat-name-by-user').val();
+         categoryValue = $('#cat-value-by-user').val();
+         console.log(categoryName); 
+         console.log(categoryValue);
+           $('.add-cat').hide(1);
+           $(".user-added-categories").append('<div class="category box" >' +  categoryName +':' + ' $' + categoryValue+ '</div>');
+         });
           
+       
          $(".plan-btn").on('click', () => {
            // show input fields
            $('.input-for-amounts').toggle();
@@ -138,7 +156,7 @@
          $(".plan-btn").hide(1);
          $('.input-for-amounts').hide(1); 
        
-//          css("font-size","150px");
+//       css("font-size","150px");
          $(".title").hide(); 
          $(".title1").hide(); 
          $("hr").hide(); 

@@ -67,20 +67,23 @@
     </div>
   </div>
   
-  <div class = "container">
+  
+  
+  <div class = "container-fluid" style="margin-top:50px;">
     
-    <div class="row" style="margin-top:30px;" >
-      <div class="col-1">
-        <button class="btn plan-btn" style =" border-radius:15px; box-shadow: 2px 3px;"><i class="fa fa-plus" ></i> Plan Budget</button>
+    <div class="row" style="margin-top:30px; margin-bottom: 40px;" >
+      <div class="col-1" style="margin-top:-30px;">
+        <button class="btn plan-btn" style =" border-radius:15px; border:1px solid black"><i class="fa fa-calendar-check-o" ></i> Plan Budget</button>
+        <button class="btn add-category" style =" border-radius:15px; border:1px solid black"><i class="fa fa-plus" aria-hidden="true"></i> Add Category</button>
       </div>
       
-      <div class ="col-10 title">
+      <div class ="col-10 title" style ="color: #487E0F; font-size:90px;">
         Shared Finances
       </div>
       
       <div class="col-1 userBtn" style="margin-top:-30px;">
-        <button  class = "btn" style="text-align:right; border-radius:15px; box-shadow: 2px 3px;" id="userbtn"><i class="fa fa-group" ></i> Users</button>
-        <button  class = "btn" style="text-align:right; cursor:help; border-radius:15px; box-shadow: 2px 3px;" id = "inst"><i class="fa fa-info" ></i> Instructions</button>
+        <button  class = "btn" style="text-align:right; border-radius:15px; border:1px solid black;" id="userbtn"><i class="fa fa-group" ></i> Users</button>
+        <button  class = "btn" style="text-align:right; cursor:help; border-radius:15px; border:1px solid black" id = "inst"><i class="fa fa-info" ></i> Instructions</button>
         
                       <div id="myInstModal" class="modal">
                                   <div class="modal-content">
@@ -94,7 +97,16 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-12" style="text-align: left; font-size:20px;">
-                                                i will put these in later but wow i finally found this stupid bug
+                                                To get started, press the "Plan Budget" corner in the top left corner. 
+                                                From here, you will be given the option to specify how much money you'd like 
+                                                to allocate to a specific category for the given week.<br><br>
+                                               
+                                                You're only working on the large display screen right now, but make sure to have 
+                                                all users for your budget download the Shared Finances app as well! With it, 
+                                                they'll be able to track the different purchases they make. These will then show up 
+                                                directly on the large display screen-- making it easier than ever to know what money 
+                                                was spent where and to better stay on top of your budget!
+                                                
                                             </div>
                                         </div>
                                       </div>
@@ -109,10 +121,8 @@
                                             <div class="col-12 userBox" style="margin-bottom:20px;">
                                                 In order to make sure we are doing our absolute best to keep your financial information confidential, we have made your budget private. 
                                                 As of right now, the only people who are able to use this plan include:
-                                                <br><br>Julianna White and Himanshu Chotwani<br>
+                                                <br><br>Julianna and Himanshu<br>
                                                 <br> If you'd like to add another user to your shared budget plan, please do so <a href="">here</a>.
-<!--                                                 fyi -- link doesn't work    -->
-<!--                                                       note to self: make it so i actually get these values from the dictionary ? -->
                                           </div>
                                             
                                         </div>
@@ -122,50 +132,60 @@
       </div>
       
     </div>
+  </div>
     
    
-
-    <hr>
+    <div class="container new-box" style="margin-top:90px;">
+    <div class="row" >
+      
+      <div class="col-6" style="background-color: #F8F8F8; border: 1px solid black; border-radius:10px; ">
+        <a class="category box" >Categories </a><hr>
+        <div class = "category box add-cat">
+          <label for="cat-name-by-user">Category</label>
+          <input type='text' id='cat-name-by-user' name="cat-name-by-user" placeholder='Enter category name' >
+          <br>
+          <label for="cat-value-by-user">Amount</label>
+          <input type='text' id='cat-value-by-user'  name="cat-value-by-user" placeholder='Enter amount'>
+          <br>
+          <button class="btn btn-lg add-cat-btn" style =" border-radius:15px; border:1px solid black;"> Submit</button>
+        </div>
+        
+        <div class = "category box user-added-categories">
+        </div>    
+      </div>
+      
+      <div class="col-2">
+      </div>
+      
+      <div class="col-4" id="log" style="background-color: #F8F8F8; padding-left:0px; padding-top:3px; border: 1px solid black; border-radius:10px; text-align: center;">
+        <a class="category box" >Log </a><hr>
+      </div>
+      
+    </div>
     
-    <div class="flex-container" >
-
-        <div class="category box food-div" >
-         <i class="fa fa-cutlery" aria-hidden="true"></i>
-          Food: $
-          <input class = "input-for-amounts" type="text" name="food-amount" id="food-amount">
-        </div>
-        <div class="category box act-div">
-          <i class="fa fa-bicycle" aria-hidden="true"></i>
-          Activities: $
-          <input class = "input-for-amounts" type="text" name="act-amount" id="act-amount">
-        </div>
-        <div class="category box tra-div">
-          <i class="fa fa-subway" aria-hidden="true"></i>
-          Transportation: $
-          <input class = "input-for-amounts" type="text" name="tra-amount" id="tra-amount">
-        </div>
-        <div class="category box misc-div">
-          <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
-          Misc: $
-          <input class = "input-for-amounts" type="text" name="misc-amount" id="misc-amount">
-        </div>
-      
-
-        <div id="total-budget" class ="box">
-        </div>
-      
   </div>
-   <div class="row" style="margin-top:30px;">
+  
+<!--     <div class="flex-container" >
+        <div class = "category box add-cat">
+          <label for="cat-name-by-user">Category</label>
+          <input type='text' id='cat-name-by-user' name="cat-name-by-user" placeholder='Enter category name' >
+          <br>
+          <label for="cat-value-by-user">Amount</label>
+          <input type='text' id='cat-value-by-user'  name="cat-value-by-user" placeholder='Enter amount'>
+          <br>
+          <button class="btn btn-lg add-cat-btn" style =" border-radius:15px; border:1px solid black;"> Submit</button>
+        </div>
+        
+        <div class = "category box user-added-categories">
+        </div>    
+  </div> -->
+   
+  <div class="row" style="margin-top:30px;">
       <div class="col-12" style="text-align:right;">
         <button class="btn finalize-btn"><i class="fa fa-check" ></i> Finalize Budget</button>
       </div>
     </div>
      
-  <div class="container" id="log" style="padding-top:30px;">
-    <hr style="margin-top:-70px;">
-
- 
-  </div>
       
   <div id = "submitForm" style="text-align: center;">
           <form > 
